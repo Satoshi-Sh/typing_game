@@ -1,0 +1,35 @@
+.easy_p {
+ background-image: url('https://res.cloudinary.com/dmaijlcxd/image/upload/v1670714070/sample.jpg');
+ background-repeat: no-repeat;
+background-size:cover;
+ width:100vw;
+ height:100vh;
+
+ display:flex;
+ justify-content: center;
+ align-items:center;
+ 
+}
+
+.board{
+    padding:20px;
+    width:80vw;
+    height:80vh;
+    display:flex;
+    background-color: whitesmoke;
+    
+}
+textarea{
+    width:80vw;
+    background-color:whitesmoke;
+    border:none;
+    font-size:23px;
+    color:rgba(128, 128, 128, 0.342)
+    
+}
+
+
+textarea:focus {
+    outline:0;
+
+}

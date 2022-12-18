@@ -1,0 +1,31 @@
+.selectLevel{
+    padding:20px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+
+}
+
+button{
+    width:100px;
+    padding:10px;
+    font-size:20px;
+    cursor:pointer;
+
+}
+
+button:hover {
+    transform:scale(1.1)
+}
+
+.easy{
+    background-color:antiquewhite
+}
+
+.normal {
+    background-color:aquamarine
+}
+
+.hard {
+    background-color: red;
+}
