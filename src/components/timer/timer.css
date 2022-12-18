@@ -1,0 +1,8 @@
+.timer {
+    background-color:rgb(39, 230, 125);
+    width:100px;
+    color:rgb(31, 29, 29);
+    display:flex;
+    justify-content: center;
+    border-radius:10px;
+}
