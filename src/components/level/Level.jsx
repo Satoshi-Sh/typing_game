@@ -1,14 +1,18 @@
 import "./level.css"
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 export default function Level(props){
     return (
         <div className='selectLevel'>
-            <Link to ='/easy'>
-               <button className='easy'>Easy</button>
+            <Link to ="/game" state = {{level:'Easy'}}>
+            <button className='easy'>Easy</button>
             </Link>
-            <button className="normal">Normal</button>
-            <button className="hard">Hard</button>
+            <Link to ="/game" state = {{level:'Normal'}}>
+            <button className='normal'>Normal</button>
+            </Link>
+            <Link to ="/game" state = {{level:'Hard'}}>
+            <button className='hard'>Hard</button>
+            </Link>
         </div>
     )
 }

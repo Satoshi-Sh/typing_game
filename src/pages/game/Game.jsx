@@ -1,19 +1,27 @@
-import './easy.css'
+import './game.css'
 import React, { useEffect, useState } from 'react';
 import Timer from '../../components/timer/Timer'
-import {useNavigate} from 'react-router-dom';
+import {useNavigate,useLocation} from 'react-router-dom';
 
-export default function Easy(){
+const data = {
+    'Easy':`This is a test text to calculate your typing speed. Take it easy. Fluency comes with practice.`,
+    'Normal': 'Mastodon is free and open-source software for running self-hosted social networking services. It has microblogging features similar to Twitter, which are offered by a large number of independently run nodes, known as instances, each with its own code of conduct, terms of service, privacy policy, privacy options, and moderation policies.',
+    'Hard': `The Odin Project is an open-source community dedicated to providing the best information sources to take you from zero to a full-stack developer. More information can be found at The Odin Project's about page. In this unit, we'll learn about how the web works and start thinking about the basics of computer and web programming. Each of the following sections and lessons represents essential baseline knowledge. Even if you have no intention of becoming a web developer yourself, this material should help you gain a useful understanding of the moving parts involved in creating and serving content on the web.`
+}
+
+export default function Game(){
     const navigate = useNavigate()
-    const text = `This is a test text to calculate your typing speed. Take it easy. Fluency comes with practice.`
+    const location= useLocation()
+    const text = data[location.state.level]
     const word_counts = text.split(' ').length
     const [cursor,setCursor] = useState(0)
     const [mistypes,setMistypes] = useState(0)
-
+    
 
     useEffect(() => {
         function handleKeyDown(e) {
             let letter = document.querySelector(`#letter${cursor}`)
+            console.log(text[cursor], e.key)
             if (e.key =="Shift") return;
             else if (e.key=="Backspace"){
                 if (cursor > 0){
@@ -29,7 +37,7 @@ export default function Easy(){
                 if (cursor==text.length-1){
                     const time = document.querySelector('#time').innerText
                     const wpm =  Math.round((word_counts/parseInt(time)) * 60)
-                    navigate('/score', {state:{mode:'Easy',time:time,mistypes,wpm}})
+                    navigate('/score', {state:{mode:location.state.level,time:time,mistypes,wpm}})
                     
                 }
             }
