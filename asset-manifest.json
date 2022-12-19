@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/typing_game/static/css/main.54786a42.css",
+    "main.js": "/typing_game/static/js/main.2c111b45.js",
+    "static/js/787.59e57e67.chunk.js": "/typing_game/static/js/787.59e57e67.chunk.js",
+    "static/media/stomp.wav": "/typing_game/static/media/stomp.b788c8066dc5be6ac8a6.wav",
+    "static/media/click.wav": "/typing_game/static/media/click.7cadfc1f830553877566.wav",
+    "static/media/on.png": "/typing_game/static/media/on.f355de2b5a72712283bd.png",
+    "index.html": "/typing_game/index.html",
+    "main.54786a42.css.map": "/typing_game/static/css/main.54786a42.css.map",
+    "main.2c111b45.js.map": "/typing_game/static/js/main.2c111b45.js.map",
+    "787.59e57e67.chunk.js.map": "/typing_game/static/js/787.59e57e67.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.54786a42.css",
+    "static/js/main.2c111b45.js"
+  ]
+}
