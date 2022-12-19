@@ -28,6 +28,7 @@ export default function Writer(props){
   
 />
 {showLevels && <Level />}
+
    </div>
       );
 }

@@ -29,3 +29,8 @@ button:hover {
 .hard {
     background-color: red;
 }
+
+.buttons {
+    display:flex;
+    flex-direction:column;
+}

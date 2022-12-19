@@ -2,6 +2,8 @@ import './game.css'
 import React, { useEffect, useState } from 'react';
 import Timer from '../../components/timer/Timer'
 import {useNavigate,useLocation} from 'react-router-dom';
+import c from '../../audio/click.wav'
+import s from '../../audio/stomp.wav'
 
 const data = {
     'Easy':`This is a test text to calculate your typing speed. Take it easy. Fluency comes with practice.`,
@@ -9,10 +11,16 @@ const data = {
     'Hard': `The Odin Project is an open-source community dedicated to providing the best information sources to take you from zero to a full-stack developer. More information can be found at The Odin Project's about page. In this unit, we'll learn about how the web works and start thinking about the basics of computer and web programming. Each of the following sections and lessons represents essential baseline knowledge. Even if you have no intention of becoming a web developer yourself, this material should help you gain a useful understanding of the moving parts involved in creating and serving content on the web.`
 }
 
+
+let click = new Audio(c)
+let stomp = new Audio(s)
+
 export default function Game(){
+
     const navigate = useNavigate()
     const location= useLocation()
     const text = data[location.state.level]
+    const audio = location.state.audio
     const word_counts = text.split(' ').length
     const [cursor,setCursor] = useState(0)
     const [mistypes,setMistypes] = useState(0)
@@ -54,6 +62,10 @@ export default function Game(){
 
             }
             else if (e.key==text[cursor]){
+                if (audio){
+                click.currentTime =0
+                click.play()
+                }
                 letter.style.color='green'
                 if (cursor < text.length){
                 setCursor(cursor+1)
@@ -68,6 +80,10 @@ export default function Game(){
                 
             }
             else {   
+                if (audio){
+                stomp.currentTime =0
+                stomp.play()
+                }
                 letter.style.color='red'
                 letter.style.textDecoration='underline'
                 
