@@ -1,6 +1,7 @@
 # Typing application game 
 
 To be more familiar with React. I made a typing game. 
+Live page: https://satoshi-sh.github.io/typing_game
 
 
 
